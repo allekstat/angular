@@ -1,0 +1,82 @@
+<!-- <p>usando switch case no angular</p>
+<p>pode usar {{'@switch (valor) {@case (valor) {html} @default {html}}'}}</p>
+<p>ou pode usar como o professor ensinou</p>
+<p>{{'\<p [ngSwitch]="valor">'}}</p>
+<p>{{'\t\<p *ngSwitchCase="valor">html\</p>'}}</p>
+<p>{{'\t\<p *ngSwitchDefault="">html\</p>'}}</p>
+<p>{{'\</p>'}}</p>
+<p>o {{'\<p *ngIf="condição">\</p>'}} é usao para mostrar ou não o elemento</p>
+<p>ou pode simplesmente usar {{'@if (condição) {html)'}}</p> -->
+
+
+<!-- <p [ngSwitch]=""></p> -->
+<!-- <h1 [style]='{"color": condicao ? "red" : "blue"}'>alexsander</h1> -->
+<!-- <p *ngFor="lista; let indice as index">
+    <p>{{indice}}</p>
+</p> -->
+<p>usando *ngIf</p>
+<p>condição: {{condicao}}</p>
+<button (click)='condicao = !condicao'>mudar visibilidade</button>
+<p *ngIf="condicao">oooi</p>
+<hr>
+<p>usando *ngSwitchCase</p>
+<p>pontos: {{pontos}}</p>
+<div [ngSwitch]="pontos">
+    <p *ngSwitchCase="15000">brutal</p>
+    <p *ngSwitchCase="10000">moderado</p>
+    <p *ngSwitchCase="5000">novato</p>
+    <p *ngSwitchDefault="">noob</p>
+</div>
+<hr>
+<p>usando *ngFor</p>
+<ul>
+<li *ngFor="let item of lista; index as indice">{{item}} - {{indice}}</li>
+</ul>
+<hr>
+<p>usando [ngStyle]</p>
+<button (click)='condicao = !condicao'>mudar visibilidade</button>
+<p [ngStyle]="{color: condicao ? 'pink' : 'cyan'}">ooooopa</p>
+<hr>
+<p>usando [ngClass]</p>
+<p *ngFor="let nome of lista" [ngClass]="nome == 'allekstat' ? 'fonte-vermelha' : 'fonte-azul'">eueueu</p>
+<hr>
+<p>usando {{'@if'}}, {{'@else if'}} e {{'@else'}}</p>
+@if (media >= 7)
+{
+    <p>aprovado</p>
+}
+@else if (media >= 5)
+{
+    <p>em exame</p>
+}
+@else
+{
+    <p>reprovado</p>
+}
+<hr>
+<p>usando {{'@for'}}</p>
+@for (item of lista; track $index)
+{
+
+}
+@for (nome of lista; track $index)
+{
+    <p>{{nome}} - {{$index}}</p>
+}
+<hr>
+<p>usando {{'@switch'}} {{'@case'}} {{'@default'}}</p>
+@switch (linguagem)
+{
+    @case ('html')
+    {
+        <p>bom</p>
+    }
+    @case ('javascript')
+    {
+        <p>muito bom</p>
+    }
+    @default
+    {
+        <p>ruim</p>
+    }
+}
